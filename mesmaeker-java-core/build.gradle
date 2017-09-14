@@ -1,0 +1,10 @@
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+dependencies {
+
+    // JUNIT
+    compile "junit:junit:${junit4_version}"
+}
+

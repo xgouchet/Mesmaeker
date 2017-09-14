@@ -1,0 +1,15 @@
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+dependencies {
+
+    compile project(':mesmaeker-java-core')
+    compile "org.mockito:mockito-core:${mockito_core_version}"
+    compile 'org.assertj:assertj-core:3.6.2'
+
+    // TESTS
+    testCompile "junit:junit:${junit4_version}"
+
+}
+

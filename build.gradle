@@ -1,0 +1,40 @@
+group 'fr.xgouchet'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    ext {
+        kotlin_version = '1.1.4-2'
+
+        junit_plugin_version = '1.0.0-M3'
+        junit4_version = '4.12'
+
+        mockito_core_version = '2.9.0'
+        mockito_kotlin_version = '1.5.0'
+    }
+
+    repositories {
+        jcenter()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.junit.platform:junit-platform-gradle-plugin:${junit_plugin_version}"
+    }
+}
+
+
+allprojects {
+    repositories {
+        jcenter()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+        maven { url "http://dl.bintray.com/jetbrains/spek" }
+    }
+}
+
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.4.1'
+    distributionType = Wrapper.DistributionType.ALL
+}
