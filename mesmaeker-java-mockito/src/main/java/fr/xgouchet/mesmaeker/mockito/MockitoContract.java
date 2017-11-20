@@ -1,9 +1,10 @@
 package fr.xgouchet.mesmaeker.mockito;
 
-import fr.xgouchet.mesmaeker.core.Contract;
 import org.mockito.Mockito;
 
 import java.util.function.Function;
+
+import fr.xgouchet.mesmaeker.core.Contract;
 
 
 /**
@@ -13,6 +14,14 @@ public class MockitoContract<T> extends Contract<T> {
 
     public void useMockInstance(Class<T> tClass) {
         setMockInstance(Mockito.mock(tClass));
+    }
+
+    public <O> OngoingClause<T, O> whenever(Function<T, O> function) {
+        if (isInstanceMock()) {
+            return new MockitoOngoingClause<>(getInstance(), function);
+        } else {
+            return new ValidatingOngoingClause<>(getInstance(), function);
+        }
     }
 
     public <O> OngoingClause<T, O> when(Function<T, O> function) {

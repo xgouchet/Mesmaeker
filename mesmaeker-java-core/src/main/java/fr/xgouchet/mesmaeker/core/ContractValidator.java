@@ -19,6 +19,7 @@ public abstract class ContractValidator<T, C extends Contract<T>> {
     public static <T, C extends Contract<T>> List<Object[]> generateParameters(Class<C> contractClass) {
         Method[] declaredMethods = contractClass.getDeclaredMethods();
 
+        // TODO throw exception for invalid @Clause methods ?
 
         return Arrays.stream(declaredMethods)
                 .filter(method -> method.isAnnotationPresent(Clause.class))

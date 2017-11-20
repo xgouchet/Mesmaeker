@@ -1,4 +1,3 @@
 include ':mesmaeker-java-core', ':mesmaeker-java-mockito'
 
-include ':mesmaeker-kotlin-core'
 

@@ -10,16 +10,26 @@ public class Contract<T> {
     private T instance = null;
     private boolean instanceIsMock = true;
 
+    /**
+     * @return whether the instance is a mock
+     */
     protected boolean isInstanceMock() {
         return instanceIsMock;
     }
 
+    /**
+     * @return the instance used by this contract
+     */
     protected T getInstance() {
         return instance;
     }
 
-    public T getMock(){
-        if (instanceIsMock){
+    /**
+     * @return the mock used by this contract. If the current instance is not a mock, an exception
+     * Fis thrown
+     */
+    public T getMock() {
+        if (instanceIsMock) {
             return instance;
         } else {
             throw new IllegalStateException("Contract is not currently using a mock");
