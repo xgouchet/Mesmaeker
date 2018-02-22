@@ -3,7 +3,7 @@ version '1.0-SNAPSHOT'
 
 buildscript {
     ext {
-        kotlin_version = '1.1.60'
+        kotlin_version = '1.2.0'
         kotlin_logging_version = '1.4.6'
 
         junit_plugin_version = '1.1.0-M1'
@@ -12,6 +12,7 @@ buildscript {
 
         mockito_core_version = '2.12.0'
         mockito_kotlin_version = '1.5.0'
+        elmyr_version = '0.6'
 
         assertj_version = '3.8.0'
     }
@@ -40,6 +41,6 @@ allprojects {
 
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '3.4.1'
+    gradleVersion = '4.1'
     distributionType = Wrapper.DistributionType.ALL
 }
