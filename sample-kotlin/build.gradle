@@ -1,0 +1,25 @@
+apply plugin: 'java'
+apply plugin: 'kotlin'
+
+
+sourceCompatibility = 1.7
+
+
+dependencies {
+
+    testCompile project(':mesmaeker-core')
+    testCompile project(':mesmaeker-mockito')
+
+    // KOTLIN
+    compile "org.jetbrains.kotlin:kotlin-stdlib:${kotlin_version}"
+
+    // JUNIT
+    testCompile "junit:junit:${junit4_version}"
+    testCompile "org.mockito:mockito-core:${mockito_core_version}"
+    testCompile("com.nhaarman:mockito-kotlin:${mockito_kotlin_version}") {
+        exclude group: 'org.jetbrains.kotlin'
+    }
+    testCompile "org.assertj:assertj-core:${assertj_version}"
+    testCompile "com.github.xgouchet:Elmyr:${elmyr_version}"
+
+}

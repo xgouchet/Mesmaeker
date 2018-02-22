@@ -1,4 +1,4 @@
 include ':mesmaeker-core', ':mesmaeker-mockito'
 
 
-include ':sample'
+include ':sample-java', ':sample-kotlin'
